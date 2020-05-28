@@ -1,5 +1,6 @@
 package com.example.root;
 
+
 import com.example.controller.ControllerApplication;
 import com.example.service.ServiceApplication;
 import org.springframework.boot.SpringApplication;

@@ -8,14 +8,13 @@
 		<artifactId>multi-module</artifactId>
 	</parent>
 	<artifactId>controller</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<description>Demo project for Spring Boot</description>
 	<dependencies>
 		<dependency>
 			<groupId>com.example</groupId>
 			<artifactId>service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
