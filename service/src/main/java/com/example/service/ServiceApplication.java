@@ -2,9 +2,10 @@ package com.example.service;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 //@SpringBootApplication
-@Configuration
+@Component
 @ComponentScan(basePackages = {"com.example.service"})
 public class ServiceApplication {
 

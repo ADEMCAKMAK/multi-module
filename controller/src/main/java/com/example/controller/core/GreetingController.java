@@ -1,6 +1,7 @@
 package com.example.controller.core;
 
 
+import com.example.service.core.AdviceService;
 import com.example.service.core.GreetingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,9 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
 
+    private final AdviceService adviceService;
     private final GreetingService greetingService;
 
-    public GreetingController(GreetingService greetingService) {
+    public GreetingController(AdviceService adviceService, GreetingService greetingService) {
+        this.adviceService = adviceService;
         this.greetingService = greetingService;
     }
 
