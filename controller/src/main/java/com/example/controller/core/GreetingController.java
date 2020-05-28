@@ -1,8 +1,7 @@
-package com.example.root.core;
+package com.example.controller.core;
 
 
 import com.example.service.core.GreetingService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
 
-    @Autowired
-    private GreetingService greetingService;
+    private final GreetingService greetingService;
+
+    public GreetingController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
 
     @RequestMapping(value = "/greetingFromService", method = RequestMethod.GET)
     public ResponseEntity<?> greetingFromService(){

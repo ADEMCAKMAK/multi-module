@@ -7,20 +7,13 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<artifactId>multi-module</artifactId>
 	</parent>
-	<artifactId>root</artifactId>
+	<artifactId>controller</artifactId>
 	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.example</groupId>
 			<artifactId>service</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.example</groupId>
-			<artifactId>controller</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
