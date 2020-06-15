@@ -1,9 +1,7 @@
 package com.example.root;
 
 
-import com.example.controller.config.CommonControllerConfig;
 import com.example.root.config.CommonConfig;
-import com.example.service.config.CommonServiceConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
