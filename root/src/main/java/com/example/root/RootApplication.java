@@ -1,19 +1,24 @@
 package com.example.root;
 
 
+import com.example.controller.config.CommonControllerConfig;
 import com.example.root.config.CommonConfig;
+import com.example.service.config.CommonServiceConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 
 
-@ServletComponentScan
 @SpringBootApplication
+@EnableAspectJAutoProxy
+@ServletComponentScan
 @Import(value = {CommonConfig.class})
 public class RootApplication extends SpringBootServletInitializer {
+
     public static void main(String[] args) {
         SpringApplication.run(RootApplication.class, args);
     }
