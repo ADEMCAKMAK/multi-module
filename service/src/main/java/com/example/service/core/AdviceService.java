@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdviceService {
 
-    public String advicing(){
-        return "advicing from service module";
+    public String advising(){
+        return "advising from service module";
     }
 }

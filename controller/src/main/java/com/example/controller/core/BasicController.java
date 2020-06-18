@@ -23,4 +23,9 @@ public class BasicController {
     public ResponseEntity<?> greetingFromService(){
         return ResponseEntity.ok(greetingService.greeting());
     }
+
+    @RequestMapping(value = "/advisingFromService", method = RequestMethod.GET)
+    public ResponseEntity<?> advisingFromService(){
+        return ResponseEntity.ok(adviceService.advising());
+    }
 }
