@@ -9,7 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Map;
 
 @ExtendWith(MockitoExtension.class)
-public class JUnitExtentionTest {
+public class JUnitExtensionTest {
 
     @Mock
     Map<String, Object> mapMock;

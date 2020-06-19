@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BasicController {
 
     private final AdviceService adviceService;
+
     private final GreetingService greetingService;
 
     public BasicController(AdviceService adviceService, GreetingService greetingService) {

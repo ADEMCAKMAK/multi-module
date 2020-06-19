@@ -3,60 +3,79 @@ package com.example.controller.core;
 
 import com.example.service.core.AdviceService;
 import com.example.service.core.GreetingService;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.Mockito;
+import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class BasicControllerTest extends ControllerTests{
-
-    @Mock
-    GreetingService greetingService;
+@MockitoSettings(strictness = Strictness.LENIENT)
+public class BasicControllerTest extends ControllerTests {
 
     @Mock
     AdviceService adviceService;
 
+    @Mock
+    GreetingService greetingService;
+
     @InjectMocks
     BasicController basicController;
 
-    @Override
-    @BeforeAll
-    public void beforeAll() {
-        super.beforeAll();
-/*
-        adviceService = new AdviceService();
-        greetingService = new GreetingService();
-        basicController = new BasicController(adviceService, greetingService);
-*/
-
-        //MockitoAnnotations.initMocks(this);
-    }
-
-    @Override
-    @AfterAll
-    void afterAll() {
-        super.afterAll();
-    }
-
     @Test
     void basicControllerGreetingFromServiceTest(){
-        basicController.greetingFromService();
-        verify(greetingService, times(1)).greeting();
+
+        // This part settings inputs and dependent class
+        // given
+        String expected = "greeting from service module";
+
+        // when
+        when(greetingService.greeting()).thenReturn(expected);
+
+        // then
+        String actual = (String) basicController.greetingFromService().getBody();
+
+        // checking results
+        assertThat(actual).isNotNull();
+
+        //verify(greetingService).greeting();
         //verifyNoMoreInteractions(greetingService);
+
+        // compare
+        assertEquals(expected,  actual);
     }
 
     @Test
     void basicControllerAdvisingFromServiceTest(){
-        basicController.advisingFromService();
-        verify(adviceService, times(1)).advising();
-        //verifyNoMoreInteractions(adviceService);
+
+        // This part settings inputs and dependent class
+        // given
+        String expected = "advising from service module";
+
+        // when
+        when(adviceService.advising()).thenReturn(expected);
+
+        // then
+        String actual = (String) basicController.advisingFromService().getBody();
+
+        // checking results
+        assertThat(actual).isNotNull();
+
+        verify(adviceService).advising();
+        verifyNoMoreInteractions(adviceService);
+
+        // compare
+        assertEquals(expected,  actual);
     }
 }
