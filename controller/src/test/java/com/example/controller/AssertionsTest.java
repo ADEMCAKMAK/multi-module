@@ -94,4 +94,6 @@ public class AssertionsTest {
     void testAssumptionTrueAssumptionIsTrue() {
         assumeTrue("GURU".equalsIgnoreCase("GURU"));
     }
+
+
 }
