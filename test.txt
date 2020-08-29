@@ -1,2 +1,1 @@
-line b3
-line b2
+line 1
